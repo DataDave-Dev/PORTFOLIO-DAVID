@@ -22,9 +22,10 @@ const { title, description } = Astro.props;
     <title>{title}</title>
     <ViewTransitions />
 
-    <body class="bg-neutral-950">
+    <body class="relative text-black dark:text-white">
         <div
-            class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+            class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
+        dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(198,119,139,0.3),rgba(255,255,255,0))]"
         >
         </div>
         <Header />
@@ -35,7 +36,7 @@ const { title, description } = Astro.props;
 <style is:global>
     :root {
         font-family: "Onest Variable", system-ui;
-        color-scheme: light dark;
+        color-scheme: dark;
         scroll-behavior: smooth;
         overflow-x: hidden;
     }

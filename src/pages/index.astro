@@ -9,6 +9,7 @@ import TimeLine from "../components/TimeLine.astro";
 import Proyects from "../components/Proyects.astro";
 import Calendar from "../components/Icons/Calendar.astro";
 import Folder from "../components/Icons/Folder.astro";
+import UserIcon from "../components/Icons/UserIcon.astro";
 ---
 
 <Layout
@@ -83,7 +84,10 @@ import Folder from "../components/Icons/Folder.astro";
             <Proyects />
         </SectionContainer>
         <SectionContainer id="About-me" class="py-28">
-            <h2 class="font-semibold text-2xl mb-6">Sobre Mi</h2>
+            <div class="flex align-middle">
+                <UserIcon class="mr-2 size-8" />
+                <h2 class="font-semibold text-2xl mb-6">Sobre Mi</h2>
+            </div>
         </SectionContainer>
     </main>
 
