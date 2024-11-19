@@ -1,12 +1,18 @@
+---
+import { Image } from "astro:assets";
+import ImageLogo from "/public/Luci.jpg"
+---
+
 <header
     class="flex justify-between items-center
      p-6 pb-1 xl:w-5/6 mx-auto rounded-3xl backdrop-blur-3xl fixed top-0 left-0 right-0 z-50"
 >
     <div class="flex items-center relative me-4">
-        <img
+        <Image
             class="rounded-full size-16 mb-6 backdrop-blur-xl shadow-xl shadow-black"
-            src="/Luci.jpg"
+            src={ImageLogo}
             alt="Foto"
+            loading="eager"
         />
         <span
             class="animate-ping top-0 start-12 absolute w-3.5 h-3.5 bg-green-500 rounded-full"
