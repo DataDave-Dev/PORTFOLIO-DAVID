@@ -4,21 +4,19 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Python from "../components/Icons/Python.astro";
 import SQLServer from "../components/Icons/SQLServer.astro";
 import AstroLogo from "../components/Icons/AstroLogo.astro";
-import PowerBi from "../components/Icons/PowerBi.astro"
+import PowerBi from "../components/Icons/PowerBi.astro";
 import TimeLine from "../components/TimeLine.astro";
+import ArrowDown from "../components/Icons/ArrowDown.astro";
 ---
 
 <Layout
     title="PortFolio | Web David De León"
     description="Contratame para ayudarte a tomar mejores descisiones con base de tus datos."
 >
-    <main class="px-4">
-        <SectionContainer id="Top" class="py-44 pb-20">
-            <img
-                class="rounded-full size-24  mb-6"
-                src="/Luci.jpg"
-                alt="Foto"
-            />
+    <main class="w-full py-44 px-4">
+        <SectionContainer
+            class="py-44 px-22 animate-fade animate-ease-in"
+        >
             <h1
                 class="font-bold text-3xl md:text-4xl lg:text-5xl text-white flex flex-row gap-x-4 pb-6 lg:pb-10"
             >
@@ -28,7 +26,7 @@ import TimeLine from "../components/TimeLine.astro";
                 </div>
             </h1>
             <h2 class="text-xl lg:text-2xl opacity-90 text-wrap max-n-[700px]">
-                3 años de experiencia en el mundo IT. <br /> De Monterrey, Nuevo
+                3 años de experiencia en el mundo IT. <br /> Ubicado en Monterrey, Nuevo
                 León, México. <br />
                 <span class="text-red-700"
                     >Tu analista de Datos/Sistemas de confianza.</span
@@ -36,34 +34,44 @@ import TimeLine from "../components/TimeLine.astro";
             </h2>
             <ul class="flex gap-4 mt-8 flex-wrap">
                 <li
-                    class="rounded-full border border-white/10 flex just-ecnter items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
+                    class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
                 >
                     <Python class="size-4 md:size-6" />
                     Python
                 </li>
                 <li
-                    class="rounded-full border border-white/10 flex just-ecnter items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
+                    class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
                 >
                     <SQLServer class="size-4 md:size-6" />
                     SQL Server
                 </li>
                 <li
-                    class="rounded-full border border-white/10 flex just-ecnter items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
+                    class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
                 >
                     <PowerBi class="size-4 md:size-6" />
                     Power Bi
                 </li>
                 <li
-                    class="rounded-full border border-white/10 flex just-ecnter items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
+                    class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
                 >
                     <AstroLogo class="size-4 md:size-6" />
                     Astro
                 </li>
             </ul>
         </SectionContainer>
-        <SectionContainer id="Experience">
-            <h2 class="font-semibold text-2xl mb-6">Experiencia Laboral</h2>
-            <TimeLine />
+        <SectionContainer
+            id="Experience"
+            class="animate-fade animate-ease-in animate-delay-[1200ms] py-44"
+        >
+            <div
+                class="border border-white/10 bg-white/5 hover:scale-110 transition p-6 rounded-xl hover:cursor-pointer"
+            >
+                <h2 class="font-semibold text-2xl mb-6">Experiencia Laboral</h2>
+                <TimeLine />
+            </div>
+        </SectionContainer>
+        <SectionContainer class="py-44">
+            <h1>Hoola</h1>
         </SectionContainer>
     </main>
 </Layout>
