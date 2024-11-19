@@ -1,0 +1,21 @@
+---
+import ProyectsItems from "./ProyectsItems.astro";
+
+const ProyectsInfo = [
+    {
+        title: "Dashboard",
+        description: "Dashboard desarrollado para un empresa comercializadora de licores.",
+        image: "/DashboardIndustry.webp"
+    },
+];
+---
+
+<div
+    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+>
+{
+    ProyectsInfo.map((proyect) => (
+        <ProyectsItems {...proyect}/>
+    ))
+}
+</div>

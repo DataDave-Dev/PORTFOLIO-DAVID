@@ -6,6 +6,7 @@ import SQLServer from "../components/Icons/SQLServer.astro";
 import AstroLogo from "../components/Icons/AstroLogo.astro";
 import PowerBi from "../components/Icons/PowerBi.astro";
 import TimeLine from "../components/TimeLine.astro";
+import Proyects from "../components/Proyects.astro";
 ---
 
 <Layout
@@ -13,9 +14,7 @@ import TimeLine from "../components/TimeLine.astro";
     description="Contratame para ayudarte a tomar mejores descisiones con base de tus datos."
 >
     <main class="w-full py-44 px-4">
-        <SectionContainer
-            class="py-44 px-22 animate-fade animate-ease-in"
-        >
+        <SectionContainer class="py-44 px-22 animate-fade animate-ease-in">
             <h1
                 class="font-bold text-3xl md:text-4xl lg:text-5xl text-white flex flex-row gap-x-4 pb-6 lg:pb-10"
             >
@@ -25,8 +24,8 @@ import TimeLine from "../components/TimeLine.astro";
                 </div>
             </h1>
             <h2 class="text-xl lg:text-2xl opacity-90 text-wrap max-n-[700px]">
-                3 años de experiencia en el mundo IT. <br /> Ubicado en Monterrey, Nuevo
-                León, México. <br />
+                3 años de experiencia en el mundo IT. <br /> Ubicado en Monterrey,
+                Nuevo León, México. <br />
                 <span class="text-red-700"
                     >Tu analista de Datos/Sistemas de confianza.</span
                 >
@@ -70,7 +69,10 @@ import TimeLine from "../components/TimeLine.astro";
             </div>
         </SectionContainer>
         <SectionContainer class="py-44">
-            <h1>Hoola</h1>
+            <div>
+                <h2 class="font-semibold text-2xl mb-6">Proyectos</h2>
+                <Proyects />
+            </div>
         </SectionContainer>
     </main>
 </Layout>
