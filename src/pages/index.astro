@@ -8,16 +8,19 @@ import PowerBi from "../components/Icons/PowerBi.astro";
 import TimeLine from "../components/TimeLine.astro";
 import Proyects from "../components/Proyects.astro";
 import Calendar from "../components/Icons/Calendar.astro";
+import Folder from "../components/Icons/Folder.astro";
 ---
 
 <Layout
     title="PortFolio | Web David De León"
     description="Contratame para ayudarte a tomar mejores descisiones con base de tus datos."
 >
-    <main class="w-full py-20 mg:py-44 mg:px-4">
-        <SectionContainer class="py-44 px-22 animate-fade animate-ease-in">
+    <main class="w-full lg:py-44 lg:pb-4 md:py-0">
+        <SectionContainer
+            class="lg:py-48 lg:pb-22 md:py-0 animate-fade animate-ease-in"
+        >
             <h1
-                class="font-bold text-3xl md:text-4xl lg:text-5xl text-white flex flex-row gap-x-4 pb-6 lg:pb-10"
+                class="font-bold text-3xl md:text-4xl lg:text-5xl text-white flex flex-row gap-x-4 pb-2 lg:pb-4"
             >
                 Hola, soy <span class="text-red-700">David De León</span><div
                     class="flex justify-center items-center"
@@ -75,7 +78,10 @@ import Calendar from "../components/Icons/Calendar.astro";
             </div>
         </SectionContainer>
         <SectionContainer id="Proyects" class="py-44">
-            <h2 class="font-semibold text-2xl mb-6">Proyectos</h2>
+            <div class="flex align-middle">
+                <Folder class="mr-2 size-8" />
+                <h2 class="font-semibold text-2xl mb-6">Proyectos</h2>
+            </div>
             <Proyects />
         </SectionContainer>
         <SectionContainer id="About-me" class="py-44">
