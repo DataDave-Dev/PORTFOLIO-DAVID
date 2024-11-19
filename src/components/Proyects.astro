@@ -7,15 +7,16 @@ const ProyectsInfo = [
         description: "Dashboard desarrollado para un empresa comercializadora de licores.",
         image: "/DashboardIndustry.webp"
     },
+    {
+        title: "Gestor de Inventario",
+        description: "Sistema de gestión de inventario de celulares para el area de sistemas",
+        image: "/ExpertGestor.webp"
+    }
 ];
 ---
 
-<div
-    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
->
 {
     ProyectsInfo.map((proyect) => (
         <ProyectsItems {...proyect}/>
     ))
 }
-</div>
