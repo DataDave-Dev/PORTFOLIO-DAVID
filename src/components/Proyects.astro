@@ -4,19 +4,25 @@ import ProyectsItems from "./ProyectsItems.astro";
 const ProyectsInfo = [
     {
         title: "Dashboard",
-        description: "Dashboard desarrollado para un empresa comercializadora de licores.",
-        image: "/DashboardIndustry.webp"
+        description:
+            "Dashboard desarrollado para un empresa comercializadora de licores.",
+        image: "/DashboardIndustry.png",
+        link: "/"
     },
     {
         title: "Gestor de Inventario",
-        description: "Sistema de gestión de inventario de celulares para el area de sistemas",
-        image: "/ExpertGestor.webp"
-    }
+        description:
+            "Sistema de gestión de inventario de celulares para el area de sistemas",
+        image: "/ExpertGestor.webp",
+        link: "/"
+    },
+    {
+        title: "Simulador de Reflexión y Refracción",
+        description: "Pagina web responsiva diseñada para un proyecto escolar influenciado por la física moderna.",
+        image: "/FimeSimulador.webp",
+        link: "https://fime-simulador-davidsupports-projects.vercel.app/"
+    },
 ];
 ---
 
-{
-    ProyectsInfo.map((proyect) => (
-        <ProyectsItems {...proyect}/>
-    ))
-}
+{ProyectsInfo.map((proyect) => <ProyectsItems {...proyect} />)}

@@ -7,6 +7,7 @@ import AstroLogo from "../components/Icons/AstroLogo.astro";
 import PowerBi from "../components/Icons/PowerBi.astro";
 import TimeLine from "../components/TimeLine.astro";
 import Proyects from "../components/Proyects.astro";
+import Calendar from "../components/Icons/Calendar.astro";
 ---
 
 <Layout
@@ -64,7 +65,12 @@ import Proyects from "../components/Proyects.astro";
             <div
                 class="border border-white/10 bg-white/5 hover:scale-110 transition p-6 rounded-xl hover:cursor-pointer"
             >
-                <h2 class="font-semibold text-2xl mb-6">Experiencia Laboral</h2>
+                <div class="flex align-middle">
+                    <Calendar class="mr-2 size-8" />
+                    <h2 class="font-semibold text-2xl mb-6">
+                        Experiencia Laboral
+                    </h2>
+                </div>
                 <TimeLine />
             </div>
         </SectionContainer>
@@ -72,7 +78,10 @@ import Proyects from "../components/Proyects.astro";
             <h2 class="font-semibold text-2xl mb-6">Proyectos</h2>
             <Proyects />
         </SectionContainer>
+        <SectionContainer id="About-me" class="py-44">
+            <h2 class="font-semibold text-2xl mb-6">Sobre Mi</h2>
+        </SectionContainer>
     </main>
-</Layout>
 
-<style></style>
+    <style></style>
+</Layout>

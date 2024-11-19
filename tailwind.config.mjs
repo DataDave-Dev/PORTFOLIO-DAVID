@@ -5,6 +5,8 @@ export default {
 		extend: {},
 	},
 	plugins: [
-		require('tailwindcss-animated')
+		require('tailwindcss-animated'),
+		require("flyonui"),
+		require("flyonui/plugin")
 	],
 }
