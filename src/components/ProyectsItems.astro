@@ -1,31 +1,143 @@
 ---
+import Badge from "./Badge.astro";
+import AstroLogo from "./Icons/AstroLogo.astro";
+import Bootstrap from "./Icons/Bootstrap.astro";
+import JavaScript from "./Icons/JavaScript.astro";
+import PowerBi from "./Icons/PowerBi.astro";
+import Python from "./Icons/Python.astro";
+import SQLServer from "./Icons/SQLServer.astro";
+import TailwindsCss from "./Icons/TailwindsCss.astro";
+import MySQL from "./Icons/MySQL.astro";
+
 interface Props {
     title: string;
     description: string;
     image: string;
     link: string;
+    code?: string;
+    frontend_1?: string;
+    frontend_2?: string;
+    frontend_3?: string;
+    vizualitation?: string;
+    database?: string;
+    backend_1?: string;
 }
 
-const { title, description, image, link } = Astro.props;
+const {
+    title,
+    description,
+    image,
+    link,
+    code,
+    frontend_1,
+    frontend_2,
+    frontend_3,
+    vizualitation,
+    database,
+    backend_1,
+} = Astro.props;
 ---
 
-<div class="flex flex-row flex-wrap mb-6 bg-slate-800 rounded-xl p-4">
+<div
+    class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 rounded-xl p-4 w-full max-w-6xl mx-auto"
+>
     <div
-        class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >
-        <img class="rounded-t-lg" src={image} alt={title} loading="eager" />
+        <img
+            class="rounded-t-lg w-full h-full object-cover"
+            src={image}
+            alt={title}
+            loading="eager"
+        />
     </div>
-    <div class="p-5">
+    <div class="p-5 text-sm">
         <h5
-            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
         >
             {title}
         </h5>
+        <ul class="flex gap-4 mt-8 flex-wrap mb-8">
+            {
+                frontend_1 == "Astro" && (
+                    <Badge class="bg-orange-800/50 text-orange-200 hover:bg-orange-700 text-sm border border-orange-900/80">
+                        <AstroLogo class="size-4 md:size-4" />
+                        Astro
+                    </Badge>
+                )
+            }
+            {
+                frontend_2 == "Tailwind" && (
+                    <Badge class="bg-sky-800/50 text-sky-200 hover:bg-sky-600 text-sm border border-sky-900/80">
+                        <TailwindsCss class="size-4 md:size-4" />
+                        Tailwind CSS
+                    </Badge>
+                )
+            }
+            {
+                frontend_3 == "JavaScript" && (
+                    <Badge class="bg-yellow-800/50 text-yellow-200 hover:bg-yellow-600 text-sm border border-yellow-900/80">
+                        <JavaScript class="size-4 m:size-4" />
+                        JavaScript
+                    </Badge>
+                )
+            }
+            {
+                frontend_1 == "Bootstrap" && (
+                    <Badge class="bg-purple-900/50 text-purple-200 hover:bg-purple-800/80 text-sm border border-purple-900/80">
+                        <Bootstrap class="size-6 m:size-4" />
+                        Bootstrap
+                    </Badge>
+                )
+            }
+            {
+                vizualitation == "Power Bi" && (
+                    <Badge class="bg-yellow-900/50 text-yellow-200 hover:bg-yellow-800/80 text-sm border border-yellow-900/80">
+                        <PowerBi class="size-6 m:size-4" />
+                        Power Bi
+                    </Badge>
+                )
+            }
+            {
+                database == "SQL Server" && (
+                    <Badge class="bg-red-900/50 text-red-200 hover:bg-red-800/80 text-sm border border-red-900/80">
+                        <SQLServer class="size-6 m:size-4" />
+                        SQL Server
+                    </Badge>
+                )
+            }
+            {
+                database == "MySQL" && (
+                    <Badge class="bg-blue-900/50 text-blue-200 hover:bg-blue-800/80 text-sm border border-blue-900/80">
+                        <MySQL class="size-6 m:size-4" />
+                        MySQL
+                    </Badge>
+                )
+            }
+            {
+                backend_1 == "Python" && (
+                    <Badge class="bg-blue-900/50 text-blue-200 hover:bg-blue-800/80 text-sm border border-blue-900/80">
+                        <Python class="size-4 m:size-4" />
+                        Python
+                    </Badge>
+                )
+            }
+        </ul>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {description}
         </p>
-        <a href={link}>
-            <button class="btn btn-gradient btn-primary">Saber más</button>
-        </a>
+        <div class="h-fit flex gap-4">
+            <a href={link}>
+                <button class="btn btn-gradient btn-error">Saber más</button>
+            </a>
+            {
+                code && (
+                    <a href={code}>
+                        <button class="btn h-[38px] border-[#2b3137] bg-[#2b3137] text-white shadow-[#2b3137]/30 hover:border-[#2b3137] hover:bg-[#2b3137]/90">
+                            <span class="icon-[tabler--brand-github]" /> Codigo
+                        </button>
+                    </a>
+                )
+            }
+        </div>
     </div>
 </div>

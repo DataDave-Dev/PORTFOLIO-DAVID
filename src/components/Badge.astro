@@ -1,0 +1,9 @@
+---
+const { class: className} = Astro.props
+---
+
+<li
+    class= `rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 hover:scale-110 transition hover:cursor-pointer ${className}`
+>
+    <slot />
+</li>

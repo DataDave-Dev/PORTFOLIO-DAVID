@@ -10,8 +10,9 @@ import Proyects from "../components/Proyects.astro";
 import Calendar from "../components/Icons/Calendar.astro";
 import Folder from "../components/Icons/Folder.astro";
 import UserIcon from "../components/Icons/UserIcon.astro";
+import Phone from "../components/Icons/Phone.astro";
 import Aboutme from "../components/Aboutme.astro";
-
+import Badge from "../components/Badge.astro";
 ---
 
 <Layout
@@ -36,12 +37,10 @@ import Aboutme from "../components/Aboutme.astro";
                 >
             </h2>
             <ul class="flex gap-4 mt-8 flex-wrap">
-                <li
-                    class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
-                >
+                <Badge class="border-wgite/10 bg-white/5 hover:bg-white/10">
                     <Python class="size-4 md:size-6" />
                     Python
-                </li>
+                </Badge>
                 <li
                     class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
                 >
@@ -85,12 +84,21 @@ import Aboutme from "../components/Aboutme.astro";
             </div>
             <Proyects />
         </SectionContainer>
-        <SectionContainer id="About-me" class="py-28">
+        <SectionContainer
+            id="About-me"
+            class="py-56 items-center justify-center"
+        >
             <div class="flex align-middle">
                 <UserIcon class="mr-2 size-8" />
-                <h2 class="font-semibold text-2xl mb-6">Sobre Mi</h2>
+                <h2 class="font-semibold text-2xl">Sobre Mi</h2>
             </div>
             <Aboutme />
+        </SectionContainer>
+        <SectionContainer id="Contact" class="py-44">
+            <div class="flex align-middle">
+                <Phone class="mr-2 size-8" />
+                <h2 class="font-semibold text-2xl">Contacto</h2>
+            </div>
         </SectionContainer>
     </main>
 
