@@ -41,10 +41,9 @@ const {
 <div
     class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 rounded-xl p-4 w-full max-w-6xl mx-auto"
 >
-    <div
-    >
+    <div>
         <img
-            class="rounded-t-lg w-full h-full object-cover"
+            class="rounded-t-lg"
             src={image}
             alt={title}
             loading="eager"
@@ -52,71 +51,71 @@ const {
     </div>
     <div class="p-5 text-sm">
         <h5
-            class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white"
+            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
         >
             {title}
         </h5>
         <ul class="flex gap-4 mt-8 flex-wrap mb-8">
             {
                 frontend_1 == "Astro" && (
-                    <Badge class="bg-orange-800/50 text-orange-200 hover:bg-orange-700 text-sm border border-orange-900/80">
-                        <AstroLogo class="size-4 md:size-4" />
+                    <Badge class="bg-orange-800/50 text-orange-200 hover:bg-orange-700 text-xs border border-orange-900/80">
+                        <AstroLogo class="size-3 md:size-3" />
                         Astro
                     </Badge>
                 )
             }
             {
                 frontend_2 == "Tailwind" && (
-                    <Badge class="bg-sky-800/50 text-sky-200 hover:bg-sky-600 text-sm border border-sky-900/80">
-                        <TailwindsCss class="size-4 md:size-4" />
+                    <Badge class="bg-sky-800/50 text-sky-200 hover:bg-sky-600 text-xs border border-sky-900/80">
+                        <TailwindsCss class="size-3 md:size-3" />
                         Tailwind CSS
                     </Badge>
                 )
             }
             {
                 frontend_3 == "JavaScript" && (
-                    <Badge class="bg-yellow-800/50 text-yellow-200 hover:bg-yellow-600 text-sm border border-yellow-900/80">
-                        <JavaScript class="size-4 m:size-4" />
+                    <Badge class="bg-yellow-800/50 text-yellow-200 hover:bg-yellow-600 text-xs border border-yellow-900/80">
+                        <JavaScript class="size-3 m:size-3" />
                         JavaScript
                     </Badge>
                 )
             }
             {
                 frontend_1 == "Bootstrap" && (
-                    <Badge class="bg-purple-900/50 text-purple-200 hover:bg-purple-800/80 text-sm border border-purple-900/80">
-                        <Bootstrap class="size-6 m:size-4" />
+                    <Badge class="bg-purple-900/50 text-purple-200 hover:bg-purple-800/80 text-xs border border-purple-900/80">
+                        <Bootstrap class="size-6 m:size-3" />
                         Bootstrap
                     </Badge>
                 )
             }
             {
                 vizualitation == "Power Bi" && (
-                    <Badge class="bg-yellow-900/50 text-yellow-200 hover:bg-yellow-800/80 text-sm border border-yellow-900/80">
-                        <PowerBi class="size-6 m:size-4" />
+                    <Badge class="bg-yellow-900/50 text-yellow-200 hover:bg-yellow-800/80 text-xs border border-yellow-900/80">
+                        <PowerBi class="size-6 m:size-3" />
                         Power Bi
                     </Badge>
                 )
             }
             {
                 database == "SQL Server" && (
-                    <Badge class="bg-red-900/50 text-red-200 hover:bg-red-800/80 text-sm border border-red-900/80">
-                        <SQLServer class="size-6 m:size-4" />
+                    <Badge class="bg-red-900/50 text-red-200 hover:bg-red-800/80 text-xs border border-red-900/80">
+                        <SQLServer class="size-6 m:size-3" />
                         SQL Server
                     </Badge>
                 )
             }
             {
                 database == "MySQL" && (
-                    <Badge class="bg-cyan-900/50 text-cyan-200 hover:bg-cyan-800/50 text-sm border border-cyan-900/80">
-                        <MySQL class="size-6 m:size-4" />
+                    <Badge class="bg-cyan-900/50 text-cyan-200 hover:bg-cyan-800/50 text-xs border border-cyan-900/80">
+                        <MySQL class="size-6 m:size-3" />
                         MySQL
                     </Badge>
                 )
             }
             {
                 backend_1 == "Python" && (
-                    <Badge class="bg-blue-900/50 text-blue-200 hover:bg-blue-800/80 text-sm border border-blue-900/80">
-                        <Python class="size-4 m:size-4" />
+                    <Badge class="bg-blue-900/50 text-blue-200 hover:bg-blue-800/80 text-xs border border-blue-900/80">
+                        <Python class="size-3 m:size-3" />
                         Python
                     </Badge>
                 )
