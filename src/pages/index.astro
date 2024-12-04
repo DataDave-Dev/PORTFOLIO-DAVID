@@ -19,47 +19,70 @@ import Badge from "../components/Badge.astro";
     title="PortFolio | Web David De León"
     description="Contratame para ayudarte a tomar mejores descisiones con base de tus datos."
 >
-    <main class="w-full py-44">
+    <main class="py-44">
         <SectionContainer class="py-44 animate-fade animate-ease-in">
-            <h1
-                class="font-bold text-3xl md:text-4xl lg:text-5xl text-white flex flex-row gap-x-4 pb-2 lg:pb-4"
-            >
-                Hola, soy <span class="text-red-700">David De León</span><div
-                    class="flex justify-center items-center"
+            <div class="flex flex-col items-center text-left">
+                <h1
+                    class="font-bold text-3xl md:text-4xl lg:text-5xl text-white pb-2 lg:pb-4"
                 >
+                    Hola, soy <span class="text-red-700">David De León</span>
+                </h1>
+                <h2
+                    class="text-xl lg:text-2xl opacity-90 text-wrap max-n-[700px]"
+                >
+                    3 años de experiencia en el mundo IT. <br /> Ubicado en Monterrey,
+                    Nuevo León, México. <br />
+                    <span class="text-red-700"
+                        >Tu analista de Datos/Sistemas de confianza.</span
+                    >
+                </h2>
+                <ul class="flex gap-4 mt-8 flex-wrap">
+                    <Badge
+                        class="s border-wgite/10 bg-white/5 hover:bg-white/10"
+                    >
+                        <Python class="size-4 md:size-6" />
+                        Python
+                    </Badge>
+                    <li
+                        class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
+                    >
+                        <SQLServer class="size-4 md:size-6" />
+                        SQL Server
+                    </li>
+                    <li
+                        class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
+                    >
+                        <PowerBi class="size-4 md:size-6" />
+                        Power Bi
+                    </li>
+                    <li
+                        class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
+                    >
+                        <AstroLogo class="size-4 md:size-6" />
+                        Astro
+                    </li>
+                </ul>
+                <div class="grid grid-cols-3 gap-x-6 mt-10 text-center">
+                    <div
+                        class="col-span-1 bg-white/5 p-6 rounded-xl text-white/50 hover:scale-110 transition-all hover:cursor-pointer"
+                    >
+                        <h1>Proyectos Realizados</h1>
+                        <p class="text-2xl font-bold mt-2 text-white">3</p>
+                    </div>
+                    <div
+                        class="col-span-1 bg-white/5 p-6 rounded-xl text-white/50 hover:scale-110 transition-all hover:cursor-pointer"
+                    >
+                        <h1>Lenguages Aprendidos</h1>
+                        <p class="text-2xl font-bold mt-2 text-white">2</p>
+                    </div>
+                    <div
+                        class="col-span-1 bg-white/5 p-6 rounded-xl text-white/50 hover:scale-110 transition-all hover:cursor-pointer"
+                    >
+                        <h1>Problemas Solucionados</h1>
+                        <p class="text-2xl font-bold mt-2 text-white">+100</p>
+                    </div>
                 </div>
-            </h1>
-            <h2 class="text-xl lg:text-2xl opacity-90 text-wrap max-n-[700px]">
-                3 años de experiencia en el mundo IT. <br /> Ubicado en Monterrey,
-                Nuevo León, México. <br />
-                <span class="text-red-700"
-                    >Tu analista de Datos/Sistemas de confianza.</span
-                >
-            </h2>
-            <ul class="flex gap-4 mt-8 flex-wrap">
-                <Badge class="s border-wgite/10 bg-white/5 hover:bg-white/10">
-                    <Python class="size-4 md:size-6" />
-                    Python
-                </Badge>
-                <li
-                    class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
-                >
-                    <SQLServer class="size-4 md:size-6" />
-                    SQL Server
-                </li>
-                <li
-                    class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
-                >
-                    <PowerBi class="size-4 md:size-6" />
-                    Power Bi
-                </li>
-                <li
-                    class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
-                >
-                    <AstroLogo class="size-4 md:size-6" />
-                    Astro
-                </li>
-            </ul>
+            </div>
         </SectionContainer>
         <SectionContainer
             id="Experience"
@@ -86,9 +109,9 @@ import Badge from "../components/Badge.astro";
         </SectionContainer>
         <SectionContainer
             id="About-me"
-            class="items-center justify-center py-40"
+            class="items-center justify-center py-44"
         >
-            <div class="flex align-middle">
+            <div class="flex align-middle mb-6">
                 <UserIcon class="mr-2 size-8" />
                 <h2 class="font-semibold text-2xl">Sobre Mi</h2>
             </div>
