@@ -26,11 +26,71 @@ import ImageLogo from "/public/Luci.jpg";
             <p class="pl-3 text-white/50">rodartealonso29@gmail.com</p>
         </div>
     </div>
-    <nav class="flex flex-row gap-x-10">
-        <a class="text-white/80 hover:text-white transition" href="/">Inicio</a>
-        <a class="text-white/80 hover:text-white transition" href="#Experience">Experencia</a>
-        <a class="text-white/80 hover:text-white transition" href="#Proyects">Proyectos</a>
-        <a class="text-white/80 hover:text-white transition" href="#About-me">Sobre mi</a>
-        <a class="text-white/80 hover:text-white transition" href="#Contact">Contacto</a>
+
+    <!-- Botón hamburguesa para móvil -->
+    <button 
+        id="menu-toggle" 
+        class="lg:hidden relative z-50 p-2 rounded-lg hover:bg-white/10 transition-colors"
+        aria-label="Menu"
+    >
+        <div id="hamburger" class="w-6 h-5 flex flex-col justify-between">
+            <span class="w-full h-0.5 bg-white transform transition-all duration-300"></span>
+            <span class="w-full h-0.5 bg-white transform transition-all duration-300"></span>
+            <span class="w-full h-0.5 bg-white transform transition-all duration-300"></span>
+        </div>
+    </button>
+
+    <!-- Menú de navegación -->
+    <nav id="navbar" 
+        class="hidden lg:flex lg:flex-row items-center fixed lg:relative top-0 lg:top-0 left-0 w-full h-screen lg:h-auto 
+        lg:w-auto backdrop-blur-xl lg:backdrop-blur-none bg-black/90 lg:bg-transparent 
+        transition-transform duration-300 ease-in-out transform lg:transform-none z-40"
+    >
+        <div class="flex flex-col lg:flex-row items-center justify-center h-full gap-8 lg:gap-x-10 text-lg">
+            <a class="text-white/80 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full" href="/">Inicio</a>
+            <a class="text-white/80 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full" href="#Experience">Experiencia</a>
+            <a class="text-white/80 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full" href="#Proyects">Proyectos</a>
+            <a class="text-white/80 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full" href="#About-me">Sobre mí</a>
+            <a class="text-white/80 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full" href="#Contact">Contacto</a>
+        </div>
     </nav>
 </header>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const spans = hamburger?.getElementsByTagName('span');
+
+    menuToggle?.addEventListener('click', () => {
+        navbar?.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+        
+        // Animar el botón hamburguesa
+        if (spans && spans.length === 3) {
+            spans[0].classList.toggle('rotate-45');
+            spans[0].classList.toggle('translate-y-2');
+            spans[1].classList.toggle('opacity-0');
+            spans[2].classList.toggle('-rotate-45');
+            spans[2].classList.toggle('-translate-y-2');
+        }
+    });
+
+    // Cerrar menú al hacer click en un enlace
+    const navLinks = navbar?.querySelectorAll('a');
+    navLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 1024) {
+                navbar?.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+                
+                // Resetear animación del botón
+                if (spans && spans.length === 3) {
+                    spans[0].classList.remove('rotate-45', 'translate-y-2');
+                    spans[1].classList.remove('opacity-0');
+                    spans[2].classList.remove('-rotate-45', '-translate-y-2');
+                }
+            }
+        });
+    });
+</script>
