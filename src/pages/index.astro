@@ -19,91 +19,81 @@ import Badge from "../components/Badge.astro";
     title="PortFolio Web | David De León"
     description="Contratame para ayudarte a tomar mejores descisiones con base de tus datos."
 >
-    <main class="py-44">
-        <SectionContainer class="py-44 animate-fade animate-ease-in">
+    <main class="px-4 sm:px-6 lg:px-8">
+        <!-- Hero Section -->
+        <SectionContainer class="min-h-screen pt-56 pb-16 md:pt-44 lg:pt-64 animate-fade animate-ease-in">
             <div class="flex flex-col items-center text-center">
-                <h1
-                    class="font-bold text-3xl md:text-4xl lg:text-5xl text-white pb-2 lg:pb-4"
-                >
+                <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl text-white pb-2 lg:pb-4">
                     Hola, soy <span class="text-red-700">David De León</span>
                 </h1>
-                <h2
-                    class="text-xl lg:text-2xl opacity-90 text-wrap max-n-[700px]"
-                >
-                    3+ años de experiencia en el mundo IT. <br /> Ubicado en Monterrey,
-                    Nuevo León, México. <br />
-                    <span class="text-red-700"
-                        >Analista de Datos/Sistemas y Desarrollador de confianza.</span
-                    >
+                <h2 class="text-lg sm:text-xl lg:text-2xl opacity-90 text-pretty max-w-[700px] mx-auto">
+                    3+ años de experiencia en el mundo IT. 
+                    <span class="block my-2">Ubicado en Monterrey, Nuevo León, México.</span>
+                    <span class="text-red-700 block">
+                        Analista de Datos/Sistemas y Desarrollador de confianza.
+                    </span>
                 </h2>
-                <ul class="flex gap-4 mt-8 flex-wrap">
-                    <Badge
-                        class="s border-wgite/10 bg-white/5 hover:bg-white/10"
-                    >
+
+                <!-- Tech Stack -->
+                <ul class="flex gap-2 sm:gap-4 mt-6 sm:mt-8 flex-wrap justify-center">
+                    <Badge class="border-white/10 bg-white/5 hover:bg-white/10">
                         <Python class="size-4 md:size-6" />
                         Python
                     </Badge>
-                    <li
-                        class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
-                    >
+                    <Badge class="border-white/10 bg-white/5 hover:bg-white/10">
                         <SQLServer class="size-4 md:size-6" />
                         SQL Server
-                    </li>
-                    <li
-                        class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
-                    >
+                    </Badge>
+                    <Badge class="border-white/10 bg-white/5 hover:bg-white/10">
                         <PowerBi class="size-4 md:size-6" />
                         Power Bi
-                    </li>
-                    <li
-                        class="rounded-full border border-white/10 flex just-center items-center gap-x-2 py-2 px-4 bg-white/5 hover:scale-110 transition hover:bg-white/10 hover:cursor-pointer"
-                    >
+                    </Badge>
+                    <Badge class="border-white/10 bg-white/5 hover:bg-white/10">
                         <AstroLogo class="size-4 md:size-6" />
                         Astro
-                    </li>
+                    </Badge>
                 </ul>
             </div>
         </SectionContainer>
-        <SectionContainer
-            id="Experience"
-            class="py-40 animate-fade animate-ease-in animate-delay-[1200ms]"
-        >
-            <div
-                class="border border-white/10 bg-white/5 transition p-6 rounded-xl"
-            >
-                <div class="flex align-middle">
-                    <Calendar class="mr-2 size-8" />
-                    <h2 class="font-semibold text-2xl mb-6">
+
+        <!-- Experience Section -->
+        <SectionContainer id="Experience" 
+            class="py-24 md:py-32 lg:py-40 animate-fade animate-ease-in animate-delay-[1200ms]">
+            <div class="border border-white/10 bg-white/5 transition p-4 sm:p-6 rounded-xl">
+                <div class="flex items-center gap-2">
+                    <Calendar class="size-6 sm:size-8" />
+                    <h2 class="font-semibold text-xl sm:text-2xl">
                         Experiencia Laboral
                     </h2>
                 </div>
                 <TimeLine />
             </div>
         </SectionContainer>
-        <SectionContainer id="Proyects" class="py-40">
-            <div class="flex align-middle mx-8">
-                <Folder class="mr-2 size-8" />
-                <h2 class="font-semibold text-2xl mb-6">Proyectos</h2>
+
+        <!-- Projects Section -->
+        <SectionContainer id="Proyects" class="py-24 md:py-32 lg:py-40">
+            <div class="flex items-center gap-2 mx-4 sm:mx-8">
+                <Folder class="size-6 sm:size-8" />
+                <h2 class="font-semibold text-xl sm:text-2xl">Proyectos</h2>
             </div>
             <Proyects />
         </SectionContainer>
-        <SectionContainer
-            id="About-me"
-            class="items-center justify-center py-44"
-        >
-            <div class="flex align-middle mb-6">
-                <UserIcon class="mr-2 size-8" />
-                <h2 class="font-semibold text-2xl">Sobre Mi</h2>
+
+        <!-- About Me Section -->
+        <SectionContainer id="About-me" class="py-24 md:py-32 lg:py-44">
+            <div class="flex items-center gap-2 mb-6">
+                <UserIcon class="size-6 sm:size-8" />
+                <h2 class="font-semibold text-xl sm:text-2xl">Sobre Mi</h2>
             </div>
             <Aboutme />
         </SectionContainer>
-        <SectionContainer id="Contact" class="py-44">
-            <div class="flex align-middle">
-                <Phone class="mr-2 size-8" />
-                <h2 class="font-semibold text-2xl">Contacto</h2>
+
+        <!-- Contact Section -->
+        <SectionContainer id="Contact" class="py-24 md:py-32 lg:py-44">
+            <div class="flex items-center gap-2">
+                <Phone class="size-6 sm:size-8" />
+                <h2 class="font-semibold text-xl sm:text-2xl">Contacto</h2>
             </div>
         </SectionContainer>
     </main>
-
-    <style></style>
 </Layout>
