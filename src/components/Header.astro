@@ -21,7 +21,7 @@ import ImageLogo from "/public/Luci.jpg";
         <span
             class="top-0 start-12 absolute w-3.5 h-3.5 bg-green-500 rounded-full"
         ></span>
-        <div class="text-sm">
+        <div class="text-sm mb-6">
             <p class="pl-3">DataDave</p>
             <p class="pl-3 text-white/50">Ing. Administrador de Sistemas</p>
             <p class="pl-3 text-white/50">rodartealonso29@gmail.com</p>
@@ -34,7 +34,7 @@ import ImageLogo from "/public/Luci.jpg";
         class="lg:hidden relative z-50 p-2 rounded-lg hover:bg-white/10 transition-colors"
         aria-label="Menu"
     >
-        <div id="hamburger" class="w-6 h-5 flex flex-col justify-between">
+        <div id="$hamburger" class="w-6 h-5 flex flex-col justify-between">
             <span class="w-full h-0.5 bg-white transform transition-all duration-300"></span>
             <span class="w-full h-0.5 bg-white transform transition-all duration-300"></span>
             <span class="w-full h-0.5 bg-white transform transition-all duration-300"></span>
@@ -42,13 +42,13 @@ import ImageLogo from "/public/Luci.jpg";
     </button>
 
     <!-- Menú de navegación -->
-    <nav id="navbar" 
+    <nav id="$navbar" 
         class="hidden lg:flex lg:flex-row items-center fixed lg:relative top-0 lg:top-0 left-0 w-full h-screen lg:h-auto 
         lg:w-auto backdrop-blur-xl lg:backdrop-blur-none bg-black/90 lg:bg-transparent 
         transition-transform duration-300 ease-in-out transform lg:transform-none z-40"
     >
         <div class="flex flex-col lg:flex-row items-center justify-center h-full text-lg">
-            <a class="text-white/80 px-4 py-2" href="/">Inicio</a>
+            <a class="text-white/80 px-4 py-2 transition-colors duration-300" href="/">Inicio</a>
             <a class="text-white/80 px-4 py-2" href="#Experience">Experiencia</a>
             <a class="text-white/80 px-4 py-2" href="#Proyects">Proyectos</a>
             <a class="text-white/80 px-4 py-2" href="#About-me">Sobre mí</a>
@@ -66,69 +66,64 @@ import ImageLogo from "/public/Luci.jpg";
 </header>
 
 <script>
-    const menuItems = document.querySelectorAll("#navbar a")
-    const menuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement
+    const $menuItems = document.querySelectorAll("#$navbar a")
+    const $menuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement
+    const $menuToggle = document.getElementById('menu-toggle')
+    const $navbar = document.getElementById('$navbar')
+    const $hamburger = document.getElementById('$hamburger')
+    const $spans = $hamburger?.getElementsByTagName('span')
 
-    menuItems.forEach((item) => {
+    // Funcionalidad del backdrop
+    $menuItems.forEach((item) => {
         item.addEventListener("mouseenter", () => {
             const { left, top, width, height } = item.getBoundingClientRect()
-
-            // Ajustar la posición considerando el scroll
             const headerOffset = document.getElementById('HeaderMenu')?.getBoundingClientRect()
             const offsetLeft = left - (headerOffset?.left || 0)
             const offsetTop = top - (headerOffset?.top || 0)
 
-            menuBackdrop.style.setProperty("--left", `${offsetLeft}px`)
-            menuBackdrop.style.setProperty("--top", `${offsetTop}px`)
-            menuBackdrop.style.setProperty("--width", `${width}px`)
-            menuBackdrop.style.setProperty("--height", `${height}px`)
+            $menuBackdrop.style.setProperty("--left", `${offsetLeft}px`)
+            $menuBackdrop.style.setProperty("--top", `${offsetTop}px`)
+            $menuBackdrop.style.setProperty("--width", `${width}px`)
+            $menuBackdrop.style.setProperty("--height", `${height}px`)
             
-            menuBackdrop.style.opacity = "1"
-            menuBackdrop.style.visibility = "visible"
+            $menuBackdrop.style.opacity = "1"
+            $menuBackdrop.style.visibility = "visible"
         })
 
         item.addEventListener("mouseleave", () => {
-            menuBackdrop.style.opacity = "0"
-            menuBackdrop.style.visibility = "hidden"
+            $menuBackdrop.style.opacity = "0"
+            $menuBackdrop.style.visibility = "hidden"
         })
     })
-</script>
 
-<script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navbar = document.getElementById('navbar');
-    const hamburger = document.getElementById('hamburger');
-    const spans = hamburger?.getElementsByTagName('span');
-
-    menuToggle?.addEventListener('click', () => {
-        navbar?.classList.toggle('hidden');
-        document.body.classList.toggle('overflow-hidden');
+    // Funcionalidad del menú móvil
+    $menuToggle?.addEventListener('click', () => {
+        $navbar?.classList.toggle('hidden')
+        document.body.classList.toggle('overflow-hidden')
         
-        // Animar el botón hamburguesa
-        if (spans && spans.length === 3) {
-            spans[0].classList.toggle('rotate-45');
-            spans[0].classList.toggle('translate-y-2');
-            spans[1].classList.toggle('opacity-0');
-            spans[2].classList.toggle('-rotate-45');
-            spans[2].classList.toggle('-translate-y-2');
+        if ($spans && $spans.length === 3) {
+            $spans[0].classList.toggle('rotate-45')
+            $spans[0].classList.toggle('translate-y-2')
+            $spans[1].classList.toggle('opacity-0')
+            $spans[2].classList.toggle('-rotate-45')
+            $spans[2].classList.toggle('-translate-y-2')
         }
-    });
+    })
 
-    // Cerrar menú al hacer click en un enlace
-    const navLinks = navbar?.querySelectorAll('a');
+    // Cerrar menú al hacer click en enlaces
+    const navLinks = $navbar?.querySelectorAll('a')
     navLinks?.forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth < 1024) {
-                navbar?.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
+                $navbar?.classList.add('hidden')
+                document.body.classList.remove('overflow-hidden')
                 
-                // Resetear animación del botón
-                if (spans && spans.length === 3) {
-                    spans[0].classList.remove('rotate-45', 'translate-y-2');
-                    spans[1].classList.remove('opacity-0');
-                    spans[2].classList.remove('-rotate-45', '-translate-y-2');
+                if ($spans && $spans.length === 3) {
+                    $spans[0].classList.remove('rotate-45', 'translate-y-2')
+                    $spans[1].classList.remove('opacity-0')
+                    $spans[2].classList.remove('-rotate-45', '-translate-y-2')
                 }
             }
-        });
-    });
+        })
+    })
 </script>
