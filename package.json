@@ -16,6 +16,7 @@
     "@vercel/analytics": "^1.5.0",
     "astro": "^4.16.13",
     "flyonui": "^1.1.0",
+    "sharp": "^0.33.5",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3"
   },
