@@ -4,6 +4,7 @@ import ImageLogo from "/public/Luci.jpg";
 ---
 
 <header
+    id="HeaderMenu"
     class="flex justify-between items-center
      p-6 pb-1 xl:w-5/6 mx-auto rounded-3xl backdrop-blur-3xl fixed top-0 left-0 right-0 z-50"
 >
@@ -46,15 +47,52 @@ import ImageLogo from "/public/Luci.jpg";
         lg:w-auto backdrop-blur-xl lg:backdrop-blur-none bg-black/90 lg:bg-transparent 
         transition-transform duration-300 ease-in-out transform lg:transform-none z-40"
     >
-        <div class="flex flex-col lg:flex-row items-center justify-center h-full gap-8 lg:gap-x-10 text-lg">
-            <a class="text-white/80 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full" href="/">Inicio</a>
-            <a class="text-white/80 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full" href="#Experience">Experiencia</a>
-            <a class="text-white/80 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full" href="#Proyects">Proyectos</a>
-            <a class="text-white/80 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full" href="#About-me">Sobre mí</a>
-            <a class="text-white/80 hover:text-white transition-colors duration-300 relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-all hover:after:w-full" href="#Contact">Contacto</a>
+        <div class="flex flex-col lg:flex-row items-center justify-center h-full text-lg">
+            <a class="text-white/80 px-4 py-2" href="/">Inicio</a>
+            <a class="text-white/80 px-4 py-2" href="#Experience">Experiencia</a>
+            <a class="text-white/80 px-4 py-2" href="#Proyects">Proyectos</a>
+            <a class="text-white/80 px-4 py-2" href="#About-me">Sobre mí</a>
+            <a class="text-white/80 px-4 py-2" href="#Contact">Contacto</a>
         </div>
     </nav>
+    <div 
+    id="menu-backdrop" 
+    class="absolute bg-white/5 backdrop-blur-lg rounded-lg
+    left-[var(--left)] top-[var(--top)] 
+    w-[var(--width)] h-[var(--height)] 
+    transition-all duration-300 ease-in-out opacity-0
+    z-[-1]"
+/>
 </header>
+
+<script>
+    const menuItems = document.querySelectorAll("#navbar a")
+    const menuBackdrop = document.querySelector("#menu-backdrop") as HTMLElement
+
+    menuItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            const { left, top, width, height } = item.getBoundingClientRect()
+
+            // Ajustar la posición considerando el scroll
+            const headerOffset = document.getElementById('HeaderMenu')?.getBoundingClientRect()
+            const offsetLeft = left - (headerOffset?.left || 0)
+            const offsetTop = top - (headerOffset?.top || 0)
+
+            menuBackdrop.style.setProperty("--left", `${offsetLeft}px`)
+            menuBackdrop.style.setProperty("--top", `${offsetTop}px`)
+            menuBackdrop.style.setProperty("--width", `${width}px`)
+            menuBackdrop.style.setProperty("--height", `${height}px`)
+            
+            menuBackdrop.style.opacity = "1"
+            menuBackdrop.style.visibility = "visible"
+        })
+
+        item.addEventListener("mouseleave", () => {
+            menuBackdrop.style.opacity = "0"
+            menuBackdrop.style.visibility = "hidden"
+        })
+    })
+</script>
 
 <script>
     const menuToggle = document.getElementById('menu-toggle');
